@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import ProgressBar from '@/core/components/progress-bar'
+import ProgressBar from '../../widgets/progress-bar/'
 import If from '@/core/components/conditions/if'
 import { GameStatus } from '@/core/providers/enums/game-status'
 import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
@@ -14,9 +14,9 @@ export default function Display({ color }: Props) {
 
   return (
     <div className="pointer-events-none flex flex-col gap-3 justify-center items-center h-full">
-      <If condition={gameStatus == GameStatus.IDLE}>
+      {/* <If condition={gameStatus == GameStatus.IDLE}> */}
         <div className="w-full flex flex-col items-center justify-center">
-          <div className="w-44">
+          <div className="w-60">
             <ProgressBar
               max={10}
               value={startTimeout}
@@ -24,7 +24,7 @@ export default function Display({ color }: Props) {
             />
           </div>
         </div>
-      </If>
+      {/* </If> */}
 
       <If condition={gameStatus == GameStatus.RUNNING}>
         <div className="relative flex justify-center items-center">
