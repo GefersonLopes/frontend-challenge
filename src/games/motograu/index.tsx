@@ -53,8 +53,8 @@ function HomePage() {
             <div className="col-span-12 sm:col-span-8 xl:col-span-9 relative order-1 sm:order-1 lg:order-2">
               <div className="flex gap-3 h-full flex-col">
                 <div className='h-full flex flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row'>
-                  <div className="h-full grow relative z-0 w-[120%]">
-                    <div className='absolute w-[115%] -mb-12'>
+                  <div className="h-full grow relative z-0 w-[100%]">
+                    <div className='absolute w-[100%] -mb-12'>
                       <Results variant='' />
                     </div>
                     <div className="relative flex items-center justify-center w-full h-full">
