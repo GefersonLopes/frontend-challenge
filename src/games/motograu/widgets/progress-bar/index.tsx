@@ -25,6 +25,8 @@ const getBackgroundColor = (color: string) => {
       return 'bg-rose-700'
     case 'gray':
       return 'bg-gray-400'
+    case 'violet':
+      return 'bg-[#7f047f]'
   }
 }
 
@@ -35,20 +37,22 @@ export default function ProgressBar({
   label = 'Próxima Rodada em',
 }: Props) {
   return (
-    <div className="w-full relative flex items-center border border-gray-500 bg-gray-600 bg-opacity-50 border-opacity-50 rounded-md h-6 dark:bg-gray-700">
-      <div
-        className={`${getBackgroundColor(
-          color
-        )} h-full transition-all duration-100 rounded-md`}
-        style={{
-          width: `${(value / max) * 100}%`,
-          transitionTimingFunction: 'linear',
-          transitionDuration: '990ms',
-        }}
-      ></div>
-      <small className="absolute w-full h-full font-semibold text-center text-xs  pointer-events-none flex items-center justify-center text-gray-200 uppercase">
-        {label} {Math.abs(value)}
+    <>
+      <small className={`h-2 font-bold text-center text-xs pointer-events-none flex items-center justify-center uppercase flex bolder w-full mb-1 text-[#7f047f] pr-3 pl-3`}>
+        Iniciando
       </small>
-    </div>
+      <div className="w-full flex items-center border border-gray-500 bg-gray-600 bg-opacity-50 border-opacity-50 rounded-md dark:bg-gray-700 h-2">
+        <div
+          className={`${getBackgroundColor(
+            'violet'
+          )} transition-all duration-100 rounded-md h-2`}
+          style={{
+            width: `${100 - (value / max) * 100}%`,
+            transitionTimingFunction: 'linear',
+            transitionDuration: '990ms',
+          }}
+        />
+      </div>
+    </>
   )
 }

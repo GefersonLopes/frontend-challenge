@@ -14,7 +14,7 @@ export default function Display({ color }: Props) {
 
   return (
     <div className="pointer-events-none flex flex-col gap-3 justify-center items-center h-full">
-      {/* <If condition={gameStatus == GameStatus.IDLE}> */}
+      <If condition={gameStatus === GameStatus.IDLE}>
         <div className="w-full flex flex-col items-center justify-center">
           <div className="w-60">
             <ProgressBar
@@ -24,27 +24,27 @@ export default function Display({ color }: Props) {
             />
           </div>
         </div>
-      {/* </If> */}
+      </If>
 
       <If condition={gameStatus == GameStatus.RUNNING}>
         <div className="relative flex justify-center items-center">
           <h1
-            className="text-6xl md:text-6xl lg:text-6xl font-bold text-gray-200 drop-shadow"
+            className="text-6xl md:text-6xl lg:text-6xl font-bold text-gray-200 drop-shadow uppercase"
             style={{
-              WebkitTextStroke: '1px #000',
+              WebkitTextStroke: '1px #7f047f',
             }}
           >
-            {multiplier?.toFixed(2)}x
+            x{multiplier?.toFixed(2)}
           </h1>
         </div>
       </If>
 
-      <If condition={gameStatus == GameStatus.MAINTENANCE}>
+      <If condition={gameStatus === GameStatus.MAINTENANCE}>
         <div className="relative flex justify-center items-center">
           <h1
             className="text-2xl md:text-3xl uppercase lg:text-3xl font-bold text-gray-200 drop-shadow"
             style={{
-              WebkitTextStroke: '1px #000',
+              WebkitTextStroke: '1px red',
             }}
           >
             Em manutenção!
@@ -52,7 +52,7 @@ export default function Display({ color }: Props) {
         </div>
       </If>
 
-      <If condition={gameStatus == GameStatus.GAME_OVER}>
+      <If condition={gameStatus === GameStatus.GAME_OVER}>
         <h1
           className="text-2xl sm:text-2xl text-gray-200 font-extrabold uppercase drop-shadow"
           style={{
@@ -62,14 +62,14 @@ export default function Display({ color }: Props) {
           O piloto caiu!
         </h1>
         <h1
-          className={`text-6xl md:text-6xl lg:text-6xl font-bold text-red-600 drop-shadow`}
+          className={`text-6xl md:text-6xl lg:text-6xl font-bold text-red-600 drop-shadow uppercase`}
           style={{
-            WebkitTextStroke: '1px #000',
+            WebkitTextStroke: '1px #7f047f',
           }}
         >
-          {multiplier.toFixed(2)}x
+          x{multiplier.toFixed(2)}
         </h1>
       </If>
     </div>
-  )
+  );
 }

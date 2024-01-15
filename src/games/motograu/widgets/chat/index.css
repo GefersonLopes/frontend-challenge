@@ -1,0 +1,30 @@
+@keyframes decreaseWidth {
+  from {
+    width: 50%;
+    display: block;
+  }
+  to {
+    width: 0;
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes increaseWidth {
+  from {
+    width: 0;
+    display: none;
+  }
+  to {
+    width: 50%;
+    display: block;
+  }
+}
+
+.decreasing-width {
+  animation: decreaseWidth 0.5s linear forwards;
+}
+
+.increasing-width {
+  animation: increaseWidth 0.5s linear forwards;
+}

@@ -1,6 +1,6 @@
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import Tabs from '@/core/components/tabs'
+import Tabs from '../../widgets/tabs/'
 import If from '@/core/components/conditions/if'
 import TextField from '@/core/components/text-field'
 import { GameStatus } from '@/core/providers/enums/game-status'
