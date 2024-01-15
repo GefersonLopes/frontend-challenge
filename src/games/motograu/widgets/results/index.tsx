@@ -32,9 +32,9 @@ export default function MultiplierResults({ variant }: Props) {
   }, [])
 
   return (
-    <div className="flex justify-center gap-2 w-[75%] lg:w-[85%] h-full relative z-10 mt-1">
+    <div className="flex justify-center gap-2 w-full h-full relative z-10 mt-1">
       <If condition={!expand}>
-      <div className={`w-[80%] md:w-[85%] lg:w-[90%] h-auto flex items-center overflow-x-auto overflow-y-hidden gap-2 overflow-x-scroll scrollbar-thin`}>
+      <div className={`w-full h-auto flex items-center overflow-x-auto overflow-y-hidden gap-2 overflow-x-scroll scrollbar-thin`}>
           {results?.map((result: ICrashResult, idx: number) => {
             return (
               <Badge
